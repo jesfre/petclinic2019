@@ -1,4 +1,4 @@
-package com.blogspot.jesfre.petclinic2019;
+package com.blogspot.jesfre.petclinic2019.model;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

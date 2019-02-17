@@ -23,29 +23,30 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("Loading owners...");
         Owner owner1 = new Owner();
-        owner1.setId(1L);
         owner1.setFirstName("Abel");
         owner1.setLastName("Ardo");
-        ownerService.save(owner1);
+        owner1 = ownerService.save(owner1);
+        System.out.println("Saved owner with Id#"+owner1.getId());
+
 
         Owner owner2 = new Owner();
-        owner2.setId(2L);
         owner2.setFirstName("Peti");
         owner2.setLastName("Rojo");
         ownerService.save(owner2);
+        System.out.println("Saved owner with Id#"+owner2.getId());
 
         System.out.println("Loading vets...");
         Vet vet1 = new Vet();
-        vet1.setId(1L);
         vet1.setFirstName("Vete");
         vet1.setLastName("Rinario");
         vetService.save(vet1);
+        System.out.println("Saved vet with Id#"+vet1.getId());
 
         Vet vet2 = new Vet();
-        vet2.setId(2L);
         vet2.setFirstName("Animal");
         vet2.setLastName("Doc");
         vetService.save(vet2);
+        System.out.println("Saved vet with Id#"+vet2.getId());
 
         System.out.println("Data loaded.");
     }

@@ -1,10 +1,7 @@
 package com.blogspot.jesfre.petclinic2019.bootstrap;
 
 import com.blogspot.jesfre.petclinic2019.model.*;
-import com.blogspot.jesfre.petclinic2019.services.OwnerService;
-import com.blogspot.jesfre.petclinic2019.services.PetTypeService;
-import com.blogspot.jesfre.petclinic2019.services.SpecialityService;
-import com.blogspot.jesfre.petclinic2019.services.VetService;
+import com.blogspot.jesfre.petclinic2019.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -17,13 +14,15 @@ public class DataInitializer implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialitiesService;
+    private final VisitService visitService;
 
     @Autowired
-    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialitiesService) {
+    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialitiesService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialitiesService = specialitiesService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -87,6 +86,12 @@ public class DataInitializer implements CommandLineRunner {
         owner2.getPets().add(petisPet);
         ownerService.save(owner2);
         System.out.println("Saved owner with Id#"+owner2.getId());
+
+        Visit petisVisit = new Visit();
+        petisVisit.setPet(petisPet);
+        petisVisit.setDate(LocalDate.now());
+        petisVisit.setDescription("Very sick!");
+        visitService.save(petisVisit);
 
         System.out.println("Loading vets...");
         Vet vet1 = new Vet();

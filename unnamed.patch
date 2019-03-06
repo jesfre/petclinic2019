@@ -1,0 +1,19 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- README.md	(revision 51fbdaca836233bd68d54b6e5843c45f1db6e4b4)
++++ README.md	(revision 51fbdaca836233bd68d54b6e5843c45f1db6e4b4)
+@@ -1,10 +0,0 @@
+-The Spring Pet Clinic for 2019.
+-
+-Dependencies:
+-- Spring 5
+-- Spring Boot 2
+-- Spring Data JPA
+-- JUnit 5
+-- Lombok
+-- Thymeleaf
+-- Bootstrap CSS
+\ No newline at end of file

@@ -23,11 +23,11 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @RequestMapping({"", "/", "/home", "/home.html"})
-    public String ownerList(Model model) {
-        model.addAttribute("ownerList", ownerService.findAll());
-        return "owners/owners";
-    }
+//    @RequestMapping({"", "/", "/home", "/home.html"})
+//    public String ownerList(Model model) {
+//        model.addAttribute("ownerList", ownerService.findAll());
+//        return "owners/owners";
+//    }
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
